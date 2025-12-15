@@ -36,7 +36,7 @@ this way makes it a lot easier to move your project around on your computer and
 share it with others without having to directly modify file paths in the
 individual scripts.
 
-RStudio provides a helpful set of tools to do this through its "Projects folder"
+Positron provides a helpful set of tools to do this through its "Project folder"
 interface, which not only creates a working directory for you but also remembers
 its location (allowing you to quickly navigate to it). The interface also
 (optionally) preserves custom settings and open files to make it easier to
