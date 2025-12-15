@@ -36,35 +36,26 @@ this way makes it a lot easier to move your project around on your computer and
 share it with others without having to directly modify file paths in the
 individual scripts.
 
-RStudio provides a helpful set of tools to do this through its "Projects"
+RStudio provides a helpful set of tools to do this through its "Projects folder"
 interface, which not only creates a working directory for you but also remembers
 its location (allowing you to quickly navigate to it). The interface also
 (optionally) preserves custom settings and open files to make it easier to
 resume work after a break.
 
 
-### Create a new project
+### Create a new project folder and a new script file
 
-* Under the `File` menu, click on `New project`, choose `New directory`, then
-  `New project`
-* Enter a name for this new folder (or "directory") and choose a convenient
-  location for it. This will be your **working directory** for the rest of the
-  day (e.g., `~/data-carpentry`)
-* Click on `Create project`
-* Create a new file where we will type our scripts. Go to File > New File > R
-  script. Click the save icon on your toolbar and save your script as
-  "`script.R`".
+* Under the File menu, click on New Folder from Template, choose R Project, then click Next
+* Enter a name for this new folder and choose a convenient location for it. This will be your working directory for working on this project (e.g., ~/data-carpentry)
+* Click on Next
+* Choose Project Configurations by selecting the version of R you wish to work with.
+* Click Create
+* A new unsaved script is automatically created. Click ctrl/cmd-s to save
+* Create a new file where you will type our scripts. Go to File > New File > R script. Click the save icon on your toolbar and save your script as “script.R”.
 
-The simplest way to open an RStudio project once it has been created is to 
-navigate through your files to where the project was saved and double
-click on the `.Rproj` (blue cube) file. This will open RStudio and start your R
-session in the **same** directory as the `.Rproj` file. All your data, plots and
-scripts will now be relative to the project directory. RStudio projects have the
-added benefit of allowing you to open multiple projects at the same time each
-open to its own project directory. This allows you to keep multiple projects
-open without them interfering with each other.
+The simplest way to open an existing Positron project folder is to open Positron and select the project folder from the drop-down menu in the upper-right corner.
 
-
+By doing it this way, you have easy acces to the data, plots and scripts belonging to your project folder.
 
 ### Organizing your working directory
 
@@ -106,12 +97,7 @@ where R will look for and save files. When you write code for your project, your
 scripts should refer to files in relation to the root of your working directory
 and only to files within this structure.
 
-Using RStudio projects makes this easy and ensures that your working directory
-is set up properly. If you need to check it, you can use `getwd()`. If for some
-reason your working directory is not the same as the location of your RStudio 
-project, it is likely that you opened an R script or RMarkdown file **not** your
-`.Rproj` file. You should close out of RStudio and open the `.Rproj` file by 
-double clicking on the blue cube! 
+Using the Positron project folder structure makes this easy and ensures that your working directory is set up properly. If you need to check it, you can use getwd(). If for some reason your working directory is not the same as the location of your Positron project folder, it is likely that you opened an R script or RMarkdown file. 
 
 
 ## Is everything up to date?
