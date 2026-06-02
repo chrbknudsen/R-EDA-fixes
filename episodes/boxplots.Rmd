@@ -191,13 +191,13 @@ The lm() function can handle more than one explanatory variable.
 Simple linear combinations of them are specified using a `+` in the 
 formula, like this:
 
-```{r}
+```{r summary_model2}
 model_2 <- lm(arr_delay ~ dep_delay + air_time, data = flightdata)
 summary(model_2)
 ```
 Interactions between explanatory variables are specied using a `*` sign:
 
-```{r}
+```{r summary_model3}
 model_3 <- lm(arr_delay ~ dep_delay*air_time, data = flightdata)
 summary(model_3)
 ```
