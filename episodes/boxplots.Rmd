@@ -16,7 +16,7 @@ exercises: 35
   
 
 
-```{r, include=FALSE}
+```{r setup, include=FALSE}
 library(tidyverse)
 library(readxl)
 flightdata <- read_excel("data/flightdata.xlsx")
@@ -31,7 +31,7 @@ Boxplots are a common way of quickly visualizing some summary statistics for dif
 For this example, we use air_time, the time the flight takes, instead of
 departure delays. 
 
-```{r}
+```{r boxplot}
 flightdata |> 
   left_join(carriers) |> 
   relocate(name, .after = carrier) |> 
@@ -57,7 +57,7 @@ Airlines serve. Their fligts are much longer than the flights of the rest of
 the airlines. 
 
 Let us take a look:
-```{r}
+```{r count}
 flightdata |> 
   left_join(carriers) |> 
   relocate(name, .after = carrier) |> 
@@ -71,7 +71,7 @@ Conclusion: Hawaiian Airlines only flies to Honolulu.
 
 Which airlines flies to Honolulu?
 
-```{r}
+```{r count_HNL}
 flightdata |>  
   left_join(carriers) |> 
   relocate(name, .after = carrier) |> 
@@ -97,12 +97,12 @@ the smoothed histograms we saw in the correllograms for each airline. Or
 we can use an extra package, `ggridges` to do something fancy.
 
 Begin by installing the package:
-```{r eval = F }
+```{r ggridges, eval = F }
 install.packages("ggridges")
 ```
 
 Then load the package, and plot the data:
-```{r}
+```{r ridges_plot}
 library(ggridges)
 
 flightdata |> 
@@ -120,7 +120,7 @@ We saw earlier, that there was a correlation between departure delay and arrival
 arrival, when we know that the departure was 47 minutes delayed.
 
 First, the plot:
-```{r}
+```{r geom_point}
 flightdata |> 
   sample_frac(0.005) |> 
   ggplot(mapping = aes(x = dep_delay, y = arr_delay)) +
@@ -130,7 +130,7 @@ This looks more or less linear. We can place a linear regression line in the plo
 using the function `geom_smooth(method = "lm")`, where we specify that the function
 should fit a linear line to the data.
 
-```{r, warning = F}
+```{r reg_line, warning = F}
 flightdata |> 
   sample_frac(0.005) |> 
   ggplot(mapping = aes(x = dep_delay, y = arr_delay)) +
@@ -155,20 +155,20 @@ arr_delay ~ dep_delay
 
 In addition we have to specify the input data in the function:
 
-```{r}
+```{r lin_reg}
 model <- lm(arr_delay ~ dep_delay, data = flightdata)
 ```
 
 We do this on the entire dataset without any problems.
 
 Let us take a look at the result:
-```{r}
+```{r model_output}
 model
 ```
 We will not spend time on a complete discussion on p-values, but the way to get
 them is to call the function `summary()` on the model:
 
-```{r}
+```{r model_summary}
 summary(model)
 ```
 Linear regressions are used to find connections between data. We might be building a model, where we try to figure out what causes delays in this data. Or find the correlation between taking a specific drug and recovering from a disease. 
@@ -191,13 +191,13 @@ The lm() function can handle more than one explanatory variable.
 Simple linear combinations of them are specified using a `+` in the 
 formula, like this:
 
-```{r}
+```{r summary_model2}
 model_2 <- lm(arr_delay ~ dep_delay + air_time, data = flightdata)
 summary(model_2)
 ```
 Interactions between explanatory variables are specied using a `*` sign:
 
-```{r}
+```{r summary_model3}
 model_3 <- lm(arr_delay ~ dep_delay*air_time, data = flightdata)
 summary(model_3)
 ```
