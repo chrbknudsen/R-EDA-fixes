@@ -30,13 +30,13 @@ The workbook consist of four spreadsheets:
 |  carrier   | Two letter carrier abbreviation. Matches the carrier variable in "airlines"  |  |
 |  flight   | Flight number   |  |
 |  tailnum   | Plane tail number. Matches the tailnum variable in "planes"  |  |
-|  origin   |   |  |
-|  dest   |   |  |
-|  air_time   |   |  |
-|  distance   |   |  |
-|  hour   |   |  |
-|  minute   |   |  |
-|  time_hour   |   |  |
+|  origin   | iata code for origin airport. Mathces the iata_code variable in "airports"  |  |
+|  dest   | iata code for destination airport. Mathces the iata_code variable in "airports"   |  |
+|  air_time   | Amount of time spent in the air  | minutes  |
+|  distance   | distance between airports  | miles  |
+|  hour   | Time of scheduled departure - the hour part  |  |
+|  minute   | Time of scheduled departure - the minutes part  |  |
+|  time_hour   | Schedules date and hour of the flight as POSIXct date. Can join flights data to "weather" data along with the origin variable  |  |
 
 ## airlines
 
@@ -60,6 +60,8 @@ The workbook consist of four spreadsheets:
 |  engine  |                               | |
 
 ## iata_codes
+
+Skal konsolideres med "airports" data fra nycflights13
 
 |  Variable  |  Description/Code                               | Unit   |   
 |------------|-------------------------------------------------|--------|
