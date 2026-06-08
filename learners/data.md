@@ -12,6 +12,9 @@ relevant IATA codes from [datahub.io](https://datahub.io/core/airport-codes).
 The `nycflights13` data is originally extracted from 
 [Bureau of Transportation Statistics](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236).
 
+
+FAA Aircraft registry, https://www.faa.gov/licenses_certificates/aircraft_certification/aircraft_registry/releasable_aircraft_download/
+
 The workbook consist of four spreadsheets:
 
 ## Flights
@@ -49,15 +52,36 @@ The workbook consist of four spreadsheets:
 
 |  Variable  |  Description/Code                               | Unit   |   
 |------------|-------------------------------------------------|--------|
-|  tailnum    |    |        |
-|  year        |                                        |        |
-|  type  |                               | |
-|  manufacturer  |                               | |
-|  model  |                               | |
-|  engines  |                               | |
-|  seats  |                               | |
-|  speed  |                               | |
-|  engine  |                               | |
+|  tailnum    | Tail number. Matches the tailnum variable in "flights"   |        |
+|  year        | Year the plane was manufactured                                       |        |
+|  type  |  Type of plane. Either fixed wing with multiple or single engine, or rotorcract (helicopter)                            | |
+|  manufacturer  |  Manufacturer of the plane                             | |
+|  model  | Model of the plane                              | |
+|  engines  |  Number of engines                              | |
+|  seats  | Number of passenger seats                               | |
+|  speed  | Average cruising speed                              | miles/h|
+|  engine  |  type of engine                             | |
+
+## Weather
+
+|  Variable  |  Description/Code                               | Unit   |   
+|------------|-------------------------------------------------|--------|
+|  origin    |    |        |
+|  year    |    |        |
+|  month    |    |        |
+| day    |    |        |
+|  hour    |    |        |
+| temp    |    |        |
+|  dewp    |    |        |
+|  humid    |    |        |
+|  wind_dir    |    |        |
+|  wind_speed    |    |        |
+|  wind_gust    |    |        |
+|  precip    |    |        |
+|  pressure    |    |        |
+|  visib    |    |        |
+|  time_hour    |    |        |
+
 
 ## iata_codes
 
